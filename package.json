@@ -1,12 +1,27 @@
 {
+  "name": "tasiomind-ui",
   "author": "Aland",
-  "description": "Private UI library for Aland projects.",
+  "description": "Private UI library .",
   "license": "UNLICENSED",
   "main": "index.ts",
-  "name": "@aland/tasiomind-ui",
   "private": true,
   "type": "module",
   "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amariwan/tasiomindUi.git"
+  },
+  "keywords": [
+    "react",
+    "ui",
+    "typescript",
+    "tasiomind"
+  ],
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0",
+    "react-icons": "^4.0.0"
+  },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
     "@next/eslint-plugin-next": "^15.3.3",
@@ -24,5 +39,8 @@
     "prismjs": "^1.30.0",
     "react": "^19.1.0",
     "react-icons": "^5.5.0"
+  },
+  "dependencies": {
+    "tasiomind-ui": "link:../../../AppData/Local/pnpm/global/5/node_modules/tasiomind-ui"
   }
 }
