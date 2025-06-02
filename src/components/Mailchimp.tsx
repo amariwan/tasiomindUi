@@ -1,8 +1,8 @@
 "use client";
 
+import type { Effects } from "@/types";
 import React, { useState, type ReactNode } from "react";
 
-import { mailchimp } from "@/resources";
 
 import { Background, Button, Column, Flex, Heading, Input, Text } from ".";
 
@@ -20,12 +20,15 @@ type NewsletterProps = {
   display: boolean;
   title: string | ReactNode;
   description: string | ReactNode;
+  effects: Effects;
+  action: string;
 };
 
 export const Mailchimp = ({ newsletter }: { newsletter: NewsletterProps }) => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const [touched, setTouched] = useState(false);
+  const { effects } = newsletter;
 
   const validateEmail = (email: string) => {
     if (email === "") return true;
@@ -66,19 +69,19 @@ export const Mailchimp = ({ newsletter }: { newsletter: NewsletterProps }) => {
     >
       <Background
         mask={{
-          cursor: mailchimp.effects.mask.cursor,
-          x: mailchimp.effects.mask.x,
-          y: mailchimp.effects.mask.y,
-          radius: mailchimp.effects.mask.radius,
+          cursor: effects.mask.cursor,
+          x: effects.mask.x,
+          y: effects.mask.y,
+          radius: effects.mask.radius,
         }}
         gradient={{
-          display: mailchimp.effects.gradient.display,
-          x: mailchimp.effects.gradient.x,
-          y: mailchimp.effects.gradient.y,
-          tilt: mailchimp.effects.gradient.tilt,
-          colorStart: mailchimp.effects.gradient.colorStart,
-          colorEnd: mailchimp.effects.gradient.colorEnd,
-          opacity: mailchimp.effects.gradient.opacity as
+          display: effects.gradient.display,
+          x: effects.gradient.x,
+          y: effects.gradient.y,
+          tilt: effects.gradient.tilt,
+          colorStart: effects.gradient.colorStart,
+          colorEnd: effects.gradient.colorEnd,
+          opacity: effects.gradient.opacity as
             | 0
             | 10
             | 20
@@ -92,19 +95,19 @@ export const Mailchimp = ({ newsletter }: { newsletter: NewsletterProps }) => {
             | 100,
         }}
         dots={{
-          display: mailchimp.effects.dots.display,
-          color: mailchimp.effects.dots.color,
-          size: mailchimp.effects.dots.size,
-          opacity: mailchimp.effects.dots.opacity,
+          display: effects.dots.display,
+          color: effects.dots.color,
+          size: effects.dots.size,
+          opacity: effects.dots.opacity,
         }}
         grid={{
-          display: mailchimp.effects.grid.display,
-          color: mailchimp.effects.grid.color,
-          opacity: mailchimp.effects.grid.opacity,
+          display: effects.grid.display,
+          color: effects.grid.color,
+          opacity: effects.grid.opacity,
         }}
         lines={{
-          display: mailchimp.effects.lines.display,
-          opacity: mailchimp.effects.lines.opacity,
+          display: effects.lines.display,
+          opacity: effects.lines.opacity,
         }}
       />
       <Heading style={{ position: "relative" }} marginBottom="s" variant="display-strong-xs">
@@ -127,7 +130,7 @@ export const Mailchimp = ({ newsletter }: { newsletter: NewsletterProps }) => {
           display: "flex",
           justifyContent: "center",
         }}
-        action={mailchimp.action}
+        action={action}
         method="post"
         id="mc-embedded-subscribe-form"
         name="mc-embedded-subscribe-form"
