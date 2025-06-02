@@ -1,0 +1,63 @@
+:root {
+  --glow-backdrop: hsl(0 0% 60% / 0.12);
+  --glow-radius: 16px;
+  --glow-border-width: 3px;
+  --glow-size: 200px;
+
+  --fallback-border: var(--glow-backdrop);
+}
+.glow {
+  --border-size: var(--glow-border-width);
+  --spotlight-size: var(--glow-size);
+  --hue: calc(var(--base, 210) + var(--xp, 0) * var(--spread, 0));
+
+  position: relative;
+  background-image: radial-gradient(
+    var(--spotlight-size) var(--spotlight-size) at calc(var(--x, 0) * 1px) calc(var(--y, 0) * 1px),
+    hsl(var(--hue) var(--saturation, 100%) var(--lightness, 70%) / var(--bg-spot-opacity, 0.1)),
+    transparent
+  );
+  background-attachment: fixed;
+  background-position: center;
+  background-size: calc(100% + 2 * var(--border-size)) calc(100% + 2 * var(--border-size));
+  border: var(--border-size) solid var(--fallback-border);
+  touch-action: none;
+  border-radius: var(--glow-radius);
+}
+.glow::before,
+.glow::after {
+  content: "";
+  position: absolute;
+  inset: calc(var(--border-size) * -1);
+  border: var(--border-size) solid transparent;
+  pointer-events: none;
+  border-radius: var(--glow-radius);
+
+  background-size: inherit;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  mask: linear-gradient(transparent, transparent), linear-gradient(white, white);
+  mask-clip: padding-box, border-box;
+  mask-composite: intersect;
+}
+
+.glow::before {
+  background-image: radial-gradient(
+    calc(var(--spotlight-size) * 0.75) calc(var(--spotlight-size) * 0.75) at calc(var(--x, 0) * 1px)
+      calc(var(--y, 0) * 1px),
+    hsl(var(--hue) var(--saturation, 100%) var(--lightness, 50%) / var(--border-spot-opacity, 1)),
+    transparent 100%
+  );
+  filter: brightness(2);
+}
+
+.glow::after {
+  background-image: radial-gradient(
+    calc(var(--spotlight-size) * 0.5) calc(var(--spotlight-size) * 0.5) at calc(var(--x, 0) * 1px)
+      calc(var(--y, 0) * 1px),
+    hsl(0 100% 100% / var(--border-light-opacity, 1)),
+    transparent 100%
+  );
+}

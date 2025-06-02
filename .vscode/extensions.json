@@ -1,0 +1,82 @@
+{
+  "recommendations": [
+    // ✨ JavaScript / TypeScript / Linting
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "ms-vscode.vscode-typescript-next",
+    "ms-vscode.vscode-typescript-tslint-plugin",
+    "yoavbls.pretty-ts-errors",
+    "stylelint.vscode-stylelint",
+    "xabikos.ReactSnippets",
+    "flowtype.flow-for-vscode",
+    "pnp.polacode",
+    "streetsidesoftware.code-spell-checker",
+    "streetsidesoftware.code-spell-checker-german",
+    "yzhang.markdown-all-in-one",
+    "naumovs.color-highlight",
+    "wayou.vscode-todo-highlight",
+
+    // 💅 Styling: CSS / Sass / PostCSS
+    "syler.sass-indented",
+    "csstools.postcss",
+
+    // ⚛️ Next.js / React Specific
+    "dsznajder.es7-react-js-snippets",
+    "blanu.vscode-styled-jsx",
+    "nabla.typewind",
+    "Arjun.swagger-viewer",
+
+    // 🔍 Markdown / MDX
+    "unifiedjs.vscode-mdx",
+    "bierner.markdown-preview-github-styles",
+
+    // 🧪 Testing & Test Runner Support
+    "ms-playwright.playwright",
+    "hbenl.vscode-test-explorer",
+
+    // 🔐 Sicherheit & Codequalität
+    "snyk-security.snyk-vscode-extension",
+    "snyk-security.vscode-vuln-cost",
+    "github.vscode-codeql",
+
+    // 🐞 Debugging & DevTools
+    "gruntfuggly.triggertaskonsave",
+    "ms-vscode.vscode-js-profile-flame",
+
+    // 🧭 Architektur / Struktur / Imports
+    "wix.vscode-import-cost",
+    "bierner.path-intellisense",
+    "christian-kohler.path-intellisense",
+    "VisualStudioExptTeam.vscodeintellicode",
+
+    // 🌐 Git & Projektmanagement
+    "eamodio.gitlens",
+    "mhutchie.git-graph",
+    "github.vscode-pull-request-github",
+    "tamasfe.even-better-toml",
+    "donjayamanne.githistory",
+    "GitHub.vscode-github-actions",
+    "GitHub.copilot",
+
+    // 📦 Monorepo / Turbo / NX
+    "task.vscode-turbo",
+    "nrwl.angular-console",
+
+    // 💻 Container & Dev Environments
+    "ms-azuretools.vscode-docker",
+    "ms-vscode-remote.remote-containers",
+    "ms-vscode.remote-explorer",
+    "ms-vscode-remote.remote-ssh",
+
+    // 🌍 i18n & Barrierefreiheit
+    "lokalise.i18n-ally",
+    "axe-core.vscode",
+
+    // 🎯 Productivity / Helpers
+    "usernamehw.errorlens",
+    "pkief.material-icon-theme",
+    "formulahendry.auto-rename-tag",
+    "aaron-bond.better-comments",
+    "enkia.tokyo-night"
+  ]
+}

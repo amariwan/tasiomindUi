@@ -1,0 +1,24 @@
+.toast {
+  opacity: 0;
+  transform: scale(0.95);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  will-change: opacity, transform;
+}
+
+.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.toast .visible:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+  will-change: transform;
+}
+
+.hidden {
+  opacity: 0;
+  transform: scale(0.95);
+}
