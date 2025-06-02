@@ -1,6 +1,6 @@
-import React from "react";
+import { type ISocial } from "@/types";
 import Script from "next/script";
-import { social } from "@/app/resources/content";
+
 
 export interface SchemaProps {
   as: "website" | "article" | "blog" | "blogPosting" | "techArticle" | "webPage" | "organization";
@@ -11,6 +11,8 @@ export interface SchemaProps {
   datePublished?: string;
   dateModified?: string;
   image?: string;
+
+  social: ISocial
   author?: {
     name: string;
     url?: string;
@@ -38,6 +40,7 @@ export function Schema({
   dateModified,
   image,
   author,
+  social
 }: SchemaProps) {
   const normalizedBaseURL = baseURL.endsWith("/") ? baseURL.slice(0, -1) : baseURL;
   const normalizedPath = path.startsWith("/") ? path : `/${path}`;
@@ -55,7 +58,7 @@ export function Schema({
     "@type": schemaType,
     url,
   };
-  
+
   schema.sameAs = Object.values(social).filter(Boolean)
 
   if (as === "website") {

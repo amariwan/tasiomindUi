@@ -1,6 +1,6 @@
 import type { StyleOptions } from "@/types";
 
-export let style: StyleOptions = {
+export let styleConfig: StyleOptions = {
   theme: "light", // dark | light
   neutral: "slate", // sand | gray | slate
   brand: "emerald", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
@@ -14,8 +14,8 @@ export let style: StyleOptions = {
 };
 
 export function setStyle(options: Partial<StyleOptions>) {
-  style = {
-    ...style,
+  styleConfig = {
+    ...styleConfig,
     ...options,
   };
 }

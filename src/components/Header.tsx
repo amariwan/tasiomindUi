@@ -1,12 +1,17 @@
 "use client";
 
-import { navItems, routes } from "@/resources";
+import { type NavItem } from "@/types";
 import { usePathname } from "next/navigation";
 import { useMemo } from "react";
 import { Flex, Line, NavigationElement, SearchProvider, ThemeToggle, ToggleButton } from "./";
 import styles from "./styles/Header.module.scss";
 
-const Header = () => {
+interface HeaderProps {
+  navItems: NavItem[];
+  routes: Record<string, boolean>;
+}
+
+const Header = ({ navItems, routes }: HeaderProps) => {
   const pathname = usePathname() ?? "";
 
   const { validatedNavItems, isActive } = useMemo(() => {

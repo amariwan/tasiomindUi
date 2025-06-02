@@ -1,9 +1,9 @@
 "use client";
 
 import classNames from "classnames";
-import { forwardRef, useEffect, useState } from "react";
+import React, { forwardRef, useEffect, useState } from "react";
 
-import { styleConfig } from "@/resources";
+import { styleConfig } from "@/lib";
 
 import styles from "./styles/StylePanel.module.scss";
 
